@@ -3,13 +3,13 @@
 (* 目的: eki_t型のリストを受け取り、「最短距離最小の駅」と「最短距離最小の駅以外からなるリスト」の
 組を返す *)
 (* saitan_wo_bunri: eki_t list -> (eki_t * eki_t list) *)
-let rec saitan_wo_bunri l = match l with
-    | [] -> ({name=""; min_dis=infinity; temae_list=[]}, [])
-    | first :: rest ->
-        let (tmp_eki, tmp_res) = saitan_wo_bunri rest in
-        if first.min_dis < tmp_eki.min_dis
-        then (first, rest)
-        else (tmp_eki, first :: tmp_res)
+let rec saitan_wo_bunri l =
+    let compare eki1 eki2 =
+        if eki1.min_dis < eki2.min_dis
+        then (eki1, [])
+        else (eki2, eki1 :: [])
+        in
+    List.fold_right (compare) l ({name=""; min_dis=infinity; temae_list=[]}, [])
 
 (* 駅の例 *)
 let eki1 = {name="池袋"; min_dis = infinity; temae_list = []}
