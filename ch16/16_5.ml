@@ -33,23 +33,12 @@ let dijkstra shiten shuten =
     let modified_eki_l = dijkstra_main eki_t_list global_ekikan_list in
     find shuten_kanji modified_eki_l
 
-
-(* 目的：始点と終点を受け取ったら、最短路を求め、終点のレコードを返す *)
-(* dijkstra : string -> string -> eki_t *)
-(* let dijkstra romaji_kiten romaji_shuten =
-    let kiten = romaji_to_kanji romaji_kiten global_ekimei_list in
-    let shuten = romaji_to_kanji romaji_shuten global_ekimei_list in
-    let eki_list = make_initial_eki_list global_ekimei_list kiten in
-    let eki_list2 = dijkstra_main eki_list global_ekikan_list in
-    eki_list2 *)
-
-
 let test1 = dijkstra "shibuya" "gokokuji" =
     {name = "護国寺"; min_dis = 9.8;temae_list =
     ["護国寺"; "江戸川橋"; "飯田橋"; "市ヶ谷"; "麹町"; "永田町"; "青山一丁目"; "表参道"; "渋谷"]}
 
 let test2 = dijkstra "myogadani" "meguro" =
-  {name = "目黒"; min_dis = 12.7000000000000028; 
+  {name = "目黒"; min_dis = 12.7000000000000028;
    temae_list =
      ["目黒"; "白金台"; "白金高輪"; "麻布十番"; "六本木一丁目"; "溜池山王";
       "永田町"; "麹町"; "市ヶ谷"; "飯田橋"; "後楽園"; "茗荷谷"]}
