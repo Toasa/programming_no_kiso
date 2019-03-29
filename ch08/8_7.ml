@@ -1,10 +1,3 @@
-type ekimei_t = {
-    kanji: string;
-    kana: string;
-    romaji: string;
-    shozoku: string;
-}
-
 type ekikan_t = {
     (* 起点の駅名 *)
     kiten: string;

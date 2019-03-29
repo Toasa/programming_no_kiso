@@ -1,15 +1,4 @@
-type ekikan_t = {
-    (* 起点の駅名 *)
-    kiten: string;
-    (* 終点の駅名 *)
-    shuten: string;
-    (* 経由する路線名 *)
-    keiyu: string;
-    (* 2駅間の距離 *)
-    kyori: float;
-    (* 所要時間 *)
-    jikan: int;
-}
+#use "./ch08/8_7.ml"
 
 let global_ekikan_list = [
 {kiten="代々木上原"; shuten="代々木公園"; keiyu="千代田線"; kyori=1.0; jikan=2};
